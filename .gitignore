@@ -1,0 +1,48 @@
+# ===== Z szablonu Node.gitignore =====
+
+# Plik z kluczami i hasłami — nigdy nie trafia do repozytorium
+.env
+
+# Wszystkie warianty pliku z kluczami (np. .env.local, .env.production)
+.env.*
+
+# Wyjątek: plik przykładowy z nazwami kluczy, bez wartości, MOŻE trafić do repozytorium
+!.env.example
+
+# Pobrane biblioteki — odtwarza je polecenie instalacji, nie wysyłamy ich
+node_modules/
+
+# Folder na logi (dzienniki działania programu)
+logs
+
+# Każdy plik z końcówką .log
+*.log
+
+# Logi błędów menedżera pakietów npm
+npm-debug.log*
+
+# Logi menedżera pakietów Yarn (gdyby agent go użył)
+yarn-debug.log*
+yarn-error.log*
+
+# ===== Z szablonu Global/macOS.gitignore =====
+
+# Ukryty plik Findera z ustawieniami widoku folderu
+.DS_Store
+
+# Ukryte pliki „._nazwa” tworzone przez macOS, m.in. na dyskach zewnętrznych
+._*
+
+# ===== Z szablonu Global/Windows.gitignore =====
+
+# Pamięć podręczna miniatur Eksploratora Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Plik ustawień wyglądu folderu (desktop.ini lub Desktop.ini)
+[Dd]esktop.ini
+
+# Kosz Windows na dyskach sieciowych
+$RECYCLE.BIN/
