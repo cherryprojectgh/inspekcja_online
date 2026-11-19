@@ -132,4 +132,4 @@ Przed testami właściciel przygotowuje oba telefony, arkusz rekwizytów i dost�
 2. **Faza B.** „Zbuduj kolejną kartę według `docs/plan.md` i jej kryteriów. Użyj fikcyjnych spraw. Odnotuj wynik w planie i README.”
 3. **Faza C.** „Sprawdź kryteria i niezmienniki z kart oraz odbiór całej ścieżki na obu telefonach. Zapisz wyniki wraz z wersjami systemów i przeglądarek.”
 
-Główne materiały: `BRIEF.md`, `SPECYFIKACJA.md`, `DESIGN.md` i `index.html`. Pakiet do budowy: niniejsza specyfikacja, karty w `docs/funkcje/`, wnioski z testu w `docs/wnioski-z-testow.md` oraz `AGENTS.md`, `CLAUDE.md` i `README.md`. Plan techniczny powstanie w Fazie A.
+Główne materiały: `BRIEF.md`, `SPECYFIKACJA.md`, `DESIGN.md` i `index.html`. Pakiet do budowy: niniejsza specyfikacja, karty w `docs/funkcje/`, wnioski z testu w `docs/wnioski-z-testow.md` oraz `AGENTS.md` i `README.md`. Plan techniczny powstanie w Fazie A.

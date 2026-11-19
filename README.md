@@ -14,10 +14,10 @@ Zakres ustalono w [specyfikacji MVP](docs/specyfikacja.md). Uwagi uczestników i
 
 | Funkcja | Stan |
 | --- | --- |
-| [F00 · Fundament i środowisko testowe](docs/funkcje/F00-fundament.md) | W trakcie. Ekran próby aparatu gotowy lokalnie. |
+| [F00 · Fundament i środowisko testowe](docs/funkcje/F00-fundament.md) | W trakcie. Osobny ekran próby aparatu usunięty; próba na telefonach pozostaje do wykonania. |
 | [F01 · Link i regulamin](docs/funkcje/F01-link-i-regulamin.md) | Zaplanowana |
 | [F02 · Aparat i podgląd ujęcia](docs/funkcje/F02-aparat-i-podglad.md) | Zaplanowana |
 | [F03 · Zapis, wznowienie i poprawa zdjęć](docs/funkcje/F03-zapis-i-wznowienie.md) | Zaplanowana |
 | [F04 · Zakończenie i odbiór ścieżki](docs/funkcje/F04-zakonczenie.md) | Zaplanowana |
 
-Kolejność budowy i harmonogram opisuje [plan techniczny](docs/plan.md). Plik [ekranu próbnego](proba-aparatu/index.html) jest gotowy do udostępnienia przez HTTPS i sprawdzenia na iPhonie z Safari oraz Samsungu z Chrome.
+Kolejność budowy i harmonogram opisuje [plan techniczny](docs/plan.md). Przed integracją aparatu należy przygotować ekran próby i sprawdzić go przez HTTPS na iPhonie z Safari oraz Samsungu z Chrome.
