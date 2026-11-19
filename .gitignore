@@ -12,6 +12,9 @@
 # Pobrane biblioteki — odtwarza je polecenie instalacji, nie wysyłamy ich
 node_modules/
 
+# Lokalne zrzuty ekranu i wygenerowane dokumenty
+/output/
+
 # Folder na logi (dzienniki działania programu)
 logs
 

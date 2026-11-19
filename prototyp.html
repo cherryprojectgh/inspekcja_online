@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#faf8fc">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4OCA4MCI+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik02IDIyVjEyYTYgNiAwIDAgMSA2LTZoMTBNNjYgNmgxMGE2IDYgMCAwIDEgNiA2djEwTTYgNTh2MTBhNiA2IDAgMCAwIDYgNmgxMCIgc3Ryb2tlPSIjMDA5ZGRlIiBzdHJva2Utd2lkdGg9IjQuNSIvPgogICAgPGcgc3Ryb2tlPSIjMjM0Njc4IiBzdHJva2Utd2lkdGg9IjIuOCI+CiAgICAgIDxwYXRoIGQ9Im0yMyAzNSA0LTlhNSA1IDAgMCAxIDQtMmgyMmE1IDUgMCAwIDEgNCAybDQgOU0yMyAzNWgzOGw0IDV2MTRIMTlWNDB6TTIwIDU0djVoN3YtNW0zMCAwdjVoN3YtNU0yMyAzNWwtMy0yaC0yYTIgMiAwIDAgMCAwIDRoM200MC0yIDMtMmgyYTIgMiAwIDAgMSAwIDRoLTNNMjUgNDNsNyAxLjVNNTIgNDQuNWw3LTEuNSIvPgogICAgPC9nPgogICAgPHBhdGggZD0ibTY0IDY5IDUgNSAxMy0xNSIgc3Ryb2tlPSIjMjJhMDZiIiBzdHJva2Utd2lkdGg9IjQuNSIvPgogIDwvZz4KPC9zdmc+Cg==">
 <title>Inspekcja online — oględziny pojazdu</title>
@@ -157,18 +157,20 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
   *, *::before, *::after { box-sizing: border-box; }
   html {
-    scrollbar-gutter: stable;
+    scroll-padding-bottom: calc(var(--action-height, 0px) + 16px);
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
   body {
     margin: 0;
     min-height: 100vh;
+    min-height: 100svh;
+    padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
     display: flex;
     flex-direction: column;
     background: var(--paper);
     color: var(--ink);
-    font: 400 .9375rem/1.6 "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+    font: 400 1rem/1.6 "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
     font-synthesis: none;
   }
   h1, h2, h3, p, dl, dd { margin: 0; }
@@ -185,7 +187,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
   img { display: block; max-width: 100%; }
   :focus-visible { outline: 2px solid var(--heading); outline-offset: 3px; }
   [tabindex="-1"]:focus { outline: none; }
-  .wrap { width: min(1280px, calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+  .wrap { width: min(720px, calc(100% - 2 * var(--gutter))); margin-inline: auto; }
   .topbar { position: relative; isolation: isolate; border-bottom: 1px solid var(--line); background: var(--surface); }
   .header-art { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; }
   .header-art svg { display: block; width: 100%; height: 100%; }
@@ -193,15 +195,16 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     content: ""; position: absolute; inset: auto 0 0; height: 3px;
     background: linear-gradient(90deg, var(--heading), var(--primary) 65%, var(--bright));
   }
-  .topbar-inner { min-height: 88px; display: flex; justify-content: space-between; align-items: center; gap: var(--s2); }
-  .brand { display: flex; align-items: center; gap: var(--s2); color: var(--heading); font-size: .875rem; font-weight: 700; line-height: 1.3; }
+  .topbar-inner { min-height: 72px; padding-block: max(var(--s2), env(safe-area-inset-top)) var(--s2); display: flex; justify-content: space-between; align-items: center; gap: var(--s2); }
+  .brand { display: flex; align-items: center; gap: var(--s2); min-width: 0; color: var(--heading); font-size: .875rem; font-weight: 700; line-height: 1.3; }
   .brand-logo { display: block; width: 44px; height: auto; flex: none; }
   .brand-logo-frame { stroke: var(--accent); }
   .brand-logo-car { stroke: var(--heading); }
-  .brand-label { white-space: nowrap; }
-  .content { flex: 1; padding-block: var(--s6) 48px; }
+  #help-trigger { flex: none; }
+  .brand-label { max-width: 13em; }
+  .content { flex: 1; padding-block: var(--s4) var(--s8); }
   .process {
-    width: min(100%, 1050px); margin-inline: auto;
+    width: 100%; margin-inline: auto;
     display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s4);
   }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -239,6 +242,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     gap: var(--s2);
     min-width: 44px;
     min-height: 44px;
+    touch-action: manipulation;
     padding: var(--s2) var(--s4);
     border: 1px solid transparent;
     border-radius: var(--control-radius);
@@ -272,13 +276,12 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     transition-duration: 100ms;
   }
 
-  .vehicle-data dd { font-weight: 600; overflow-wrap: anywhere; }
-  .vehicle-data dt { margin-bottom: var(--s1); overflow-wrap: anywhere; }
-  .vehicle-panel { display: grid; gap: var(--s2); padding-bottom: var(--s3); margin-bottom: var(--s3); border-bottom: 1px solid var(--line); }
+  .vehicle-data dd { font-size: .875rem; font-weight: 600; overflow-wrap: anywhere; }
+  .vehicle-data dt { font-size: .75rem; overflow-wrap: anywhere; }
+  .vehicle-panel { display: grid; gap: var(--s1); padding-bottom: var(--s3); margin-bottom: var(--s3); border-bottom: 1px solid var(--line); }
   .vehicle-panel > strong { color: var(--heading); font-size: .9375rem; font-weight: 700; }
-  .vehicle-data { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4); }
-  .vehicle-data > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s1); }
-  .vehicle-data dd, .vehicle-data dt { font-size: .8125rem; margin: 0; }
+  .vehicle-data { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); }
+  .vehicle-data > div { min-width: 0; }
   .shot-list { margin: 0; padding-inline-start: var(--s6); }
   .shot-list li + li { margin-top: var(--s1); }
   details { background: var(--terms-bg); border: 1px solid var(--line); border-radius: var(--tile-radius); }
@@ -350,7 +353,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
   .thumb img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--soft); }
   .thumb-caption { display: grid; gap: var(--s1); padding: var(--s3); overflow-wrap: anywhere; }
   .success-mark { display: grid; place-items: center; width: 48px; height: 48px; border-radius: var(--pill-radius); background: var(--soft); color: var(--primary); }
-  .footer { background: var(--soft); padding-block: var(--s4) var(--s6); border-top: 1px solid var(--line); }
+  .footer { background: var(--soft); padding-block: var(--s4) max(var(--s6), env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
   .footer .wrap > span:first-child { color: var(--heading); font-weight: 600; }
   .footer .wrap { display: flex; gap: var(--s2) var(--s4); flex-wrap: wrap; justify-content: space-between; }
   .help-dialog {
@@ -373,21 +376,44 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     .brand-logo { width: 36px; }
     .gallery { grid-template-columns: minmax(0, 1fr); }
   }
-  @media (min-width: 761px) {
-    :root { --gutter: 25px; --panel-padding: 27px; --heading-size: 1.9375rem; }
-    .topbar-inner { min-height: 100px; }
-    .brand { gap: 14px; font-size: 1.4375rem; }
-    .brand-logo { width: 68px; }
-    .content { padding-block: 50px 64px; }
-    .process { grid-template-columns: 250px minmax(0, 1fr); gap: 35px; }
-    .journey { padding-top: 10px; }
-    .journey-title, .journey-shots { display: block; }
-    .vehicle-panel { padding-block: 18px 24px; margin-bottom: 20px; }
-    .vehicle-data { display: grid; }
+  .framing-example .viewfinder { max-height: 220px; }
+
+  /* The same touch layout is used on larger displays, without a desktop sidebar. */
+  .capture .panel-main { gap: var(--s3); }
+  .capture .viewfinder { max-height: clamp(120px, 28svh, 280px); }
+  .capture .framing-example { padding: var(--s2); }
+  .capture .actions {
+    position: fixed; z-index: 10; bottom: 0;
+    left: max(var(--gutter), env(safe-area-inset-left));
+    right: max(var(--gutter), env(safe-area-inset-right));
+    width: auto; max-width: 720px; margin: 0 auto;
+    padding: var(--s3) var(--s4) max(var(--s3), env(safe-area-inset-bottom));
+    gap: var(--s2); background: var(--surface);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -6px 24px var(--card-shadow);
   }
-  @media (min-width: 1051px) {
-    :root { --gutter: 40px; --panel-padding: 35px; }
-    .process { grid-template-columns: 300px minmax(0, 1fr); gap: 70px; }
+  .capture .actions .button { min-width: 0; }
+  .capture ~ .footer { padding-bottom: calc(var(--action-height, 210px) + var(--s6)); }
+  @media (min-width: 600px) {
+    :root { --gutter: 24px; --panel-padding: 28px; --heading-size: 1.875rem; }
+    .brand { font-size: 1rem; gap: var(--s3); }
+    .brand-label { max-width: none; }
+    .content { padding-top: var(--s6); }
+    .capture .actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .capture .actions .text-button { grid-column: 1 / -1; }
+  }
+  @media (max-height: 500px) and (min-width: 480px) {
+    .capture .actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .capture .actions .text-button { grid-column: 1 / -1; }
+  }
+  @media (max-width: 599px) {
+    .capture .vehicle-panel { grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: var(--s2); }
+    .capture .vehicle-data { grid-template-columns: auto; gap: 0; text-align: right; }
+    .capture .vehicle-data dt {
+      position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+    }
+    .capture .vehicle-data time::before { content: 'Termin: '; font-weight: 400; }
+    .capture .vehicle-panel > strong { padding-top: 1px; }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -508,6 +534,9 @@ const inspection = { accepted: false, photos: Array(shots.length).fill(null), dr
 let screen = 'terms';
 let step = 0;
 const app=document.getElementById('app'),input=document.getElementById('photo-input');
+const actionObserver = new ResizeObserver(entries => {
+  document.documentElement.style.setProperty('--action-height', `${entries[0].target.getBoundingClientRect().height}px`);
+});
 const fmt=d=>d.split('-').reverse().join('.');
 const count=s=>s.photos.filter(Boolean).length;
 function button(label, action, variant = 'text-button', { glyph, attributes = '' } = {}) {
@@ -547,10 +576,16 @@ function journey() {
 }
 
 function render(focus = true) {
+  actionObserver.disconnect();
+  app.classList.toggle('capture', screen === 'capture');
   if (screen === 'terms') renderTerms();
   else if (screen === 'capture') renderCapture();
   else if (screen === 'done') renderDone();
   else renderSummary();
+
+  const dock = app.querySelector('.capture .actions');
+  document.documentElement.style.setProperty('--action-height', `${dock ? dock.getBoundingClientRect().height : 0}px`);
+  if (dock) actionObserver.observe(dock);
 
   const heading = app.querySelector('h1');
   document.title = `${heading.textContent} | Inspekcja online`;
