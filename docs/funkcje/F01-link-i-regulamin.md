@@ -5,7 +5,7 @@
 
 ## Do przeczytania
 
-[Specyfikacja, sekcje 4–7](../specyfikacja.md), [prototyp](../../prototyp.html), [DESIGN.md](../../DESIGN.md), [zasady pracy](../../AGENTS.md).
+[Specyfikacja, sekcje 4–7](../specyfikacja.md), [prototyp](../../index.html), [DESIGN.md](../../DESIGN.md), [zasady pracy](../../AGENTS.md).
 
 ## Cel i zachowanie
 

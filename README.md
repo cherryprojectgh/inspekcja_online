@@ -2,9 +2,11 @@
 
 Aplikacja ma prowadzić osobę wykonującą oględziny ubezpieczeniowe przez osiem zdjęć pojazdu w przeglądarce telefonu. Pierwsza działająca wersja ma obsługiwać przygotowane fikcyjne sprawy i pozwolić wznowić przerwane oględziny.
 
-Klikalny [prototyp](prototyp.html) pokazuje ścieżkę klienta. Otwórz plik w przeglądarce, by przejść demonstrację. Sposób uruchomienia działającego MVP zostanie opisany po przygotowaniu fundamentu.
+Klikalny [prototyp](index.html) pokazuje ścieżkę klienta. Otwórz plik w przeglądarce, by przejść demonstrację. Sposób uruchomienia działającego MVP zostanie opisany po przygotowaniu fundamentu.
 
 Prototyp jest dostosowany do telefonów i tabletów: jedna kolumna do 720 px, sterowanie dotykowe i stale dostępne akcje zdjęcia przy dolnej krawędzi. Na większym ekranie zachowuje układ tabletowy. Weryfikację układu opisano w [planie](docs/plan.md#sprawdzenie-układu-prototypu--19-listopada-2026).
+
+Plik wejściowy to `index.html`, dzięki czemu serwer statyczny otwiera prototyp pod adresem głównym strony.
 
 Zakres ustalono w [specyfikacji MVP](docs/specyfikacja.md). Uwagi uczestników i plan ponownego testu są we [wnioskach z testów](docs/wnioski-z-testow.md).
 

@@ -128,4 +128,4 @@ Jako klient chcę sprawdzić i poprawić zdjęcia przed zakończeniem, żeby mie
 
 ## 8. Wygląd
 
-**Źródło wyglądu** — [DESIGN.md](DESIGN.md). [Prototyp](prototyp.html) korzysta z oprawy Fotoinspekcji, w tym z fioletowej kolorystyki, panelu postępu i wzorów kadrów.
+**Źródło wyglądu** — [DESIGN.md](DESIGN.md). [Prototyp](index.html) korzysta z oprawy Fotoinspekcji, w tym z fioletowej kolorystyki, panelu postępu i wzorów kadrów.
